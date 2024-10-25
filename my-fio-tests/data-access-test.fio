@@ -1,0 +1,23 @@
+; fio test for data access size analysis
+
+[global]
+name=fio-data-access
+size=1G
+ioengine=windowsaio
+iodepth=16
+direct=1
+runtime=60
+time_based
+group_reporting
+thread
+
+[readtest]
+rw=randread
+stonewall
+
+[writetest]
+rw=randwrite
+stonewall
+
+; [rwtest]
+; rw=randrw
